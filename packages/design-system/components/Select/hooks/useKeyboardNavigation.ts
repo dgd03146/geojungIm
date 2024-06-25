@@ -1,5 +1,4 @@
-import { KeyboardEventHandler } from "react";
-import { useSelectContext } from "../SelectProvider";
+import { useSelectContext } from '../context/SelectProvider';
 
 type Option = {
 	value: string;
@@ -17,15 +16,15 @@ export const useKeyboardNavigation = (selectedOptionValue: Option) => {
 		// ) as NodeListOf<HTMLLIElement>;
 
 		switch (e.key) {
-			case "ArrowUp":
+			case 'ArrowUp':
 				// ArrowUp 키에 대한 처리
-				console.log("arrow up");
+				console.log('arrow up');
 				break;
-			case "ArrowDown":
+			case 'ArrowDown':
 				// ArrowDown 키에 대한 처리
 				break;
-			case "Enter":
-				console.log("enter 되는중");
+			case 'Enter':
+				console.log('enter 되는중');
 
 				if (onValueChange) {
 					setSelectedOption(selectedOptionValue);
@@ -34,7 +33,7 @@ export const useKeyboardNavigation = (selectedOptionValue: Option) => {
 				setOpen(false);
 				// Enter 키에 대한 처리
 				break;
-			case "Escape":
+			case 'Escape':
 				// Escape 키에 대한 처리
 				setOpen(false);
 				break;
